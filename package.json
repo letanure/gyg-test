@@ -24,13 +24,40 @@
     "@vue/test-utils": "^1.0.0-beta.16",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^22.4.3",
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "validate-commit-msg": "^2.14.0",
     "vue-template-compiler": "^2.5.16"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    },
+    "validate-commit-msg": {
+      "types": [
+        "build",
+        "chore",
+        "ci",
+        "docs",
+        "feat",
+        "fix",
+        "perf",
+        "refactor",
+        "revert",
+        "style",
+        "test"
+      ],
+      "autoFix": true,
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPatternErrorMsg": "Subject must be in format 'type: Commit message'"
+    }
+  }
 }
