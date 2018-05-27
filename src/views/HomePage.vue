@@ -1,5 +1,8 @@
 <template lang="pug">
-  .HomePage Home Page
+  .HomePage.container
+    .row
+      .column.is-mobile-6.is-desktop_s-12
+        h1 Home Page
 </template>
 
 <script>

@@ -4,6 +4,8 @@
 </template>
 
 <style lang="stylus">
+@require './styles/index.styl'
+
 #app
   font-family 'Avenir', Helvetica, Arial, sans-serif
   -webkit-font-smoothing antialiased

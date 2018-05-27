@@ -1,0 +1,44 @@
+/*
+
+# Base/Grid
+
+Simple grid
+
+*/
+:root
+  --columns $columns
+  --gutter $baseline
+
+.container
+  display flex
+  flex-direction row
+  flex-wrap wrap
+
+.section
+  padding ($baseline * 2) ($baseline * 1)
+
+  & + .section
+    padding-top 0
+
+.row
+  // margin 0 calc(var(--gutter) - ( var(--gutter) * 2) )
+  align-content stretch
+  align-items stretch
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  justify-content flex-start
+  width 100%
+
+.column
+  display block
+  flex-basis calc((100% / var(--columns)) * var(--column-width))
+  order 0
+  padding-left calc(var(--gutter))
+  padding-right calc(var(--gutter))
+
+for $breakpoint in $breakpoints
+  +from-width($breakpoints[$breakpoint])
+    for $col in (1..$columns)
+      &.is-{$breakpoint}-{$col}
+        --column-width $col

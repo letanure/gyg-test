@@ -2,13 +2,12 @@
   div.BaseLayout
     template()
       transition(name='slideUp', mode='out-in', appear)
-        router-view.BaseLayout__header(name='header', )
+        router-view.BaseLayout-header(name='header', )
 
-    .columns()
       template()
         main.BaseLayout__column_main.column()
           transition(name='fade', mode='out-in', appear)
-            router-view.section.BaseLayout__main(name='main', )
+            router-view.BaseLayout-main(name='main', )
 </template>
 
 <script>
