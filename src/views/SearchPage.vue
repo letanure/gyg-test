@@ -1,12 +1,10 @@
 <template lang="pug">
-  .home Home
+  .SearchPage Search Page
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
-  name: 'ViewHome',
+  name: 'SearchPage',
   components: {
   },
 }
