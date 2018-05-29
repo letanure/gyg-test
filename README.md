@@ -2,6 +2,13 @@
 
 # Search test
 
+## Development
+
+```bash
+yarn install
+yarn serve
+```
+
 ## Stack
 
 I decided to use [vuejs](https://vuejs.org/) because is the framework that im using in the last year,
