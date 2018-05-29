@@ -3,7 +3,7 @@
   form(role="search", @submit.prevent="handleSubmit")
 
     .row
-      .column.is-mobile-7.is-tablet-9
+      .column.is-mobile-9.is-tablet-9
         label
           span.label.
             {{ labelText }}
@@ -22,8 +22,10 @@
             v-on:select='setSearchTerm',
             )
 
-      .column.is-mobile-5.is-tablet-3
-        ButtonUi(type='submit', :text='buttonText', ref='buttonComponent' )
+      .column.is-mobile-3.is-tablet-3
+        VoiceInput.voice-input(v-on:speech='setSpokenText',)
+        ButtonUi(type='submit', :text='buttonText', ref='buttonComponent', layout='green' )
+          IconUi(type='search')
 
     template(v-if='hasSuggestions')
       .row
@@ -54,14 +56,16 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { ButtonUi, InputAutocompleteUI } from '@/components/ui'
+import { ButtonUi, IconUi, InputAutocompleteUI, VoiceInput } from '@/components/ui'
 
 export default {
   name: 'SearchForm',
 
   components: {
     ButtonUi,
+    IconUi,
     InputAutocompleteUI,
+    VoiceInput,
   },
 
   props: {
@@ -140,6 +144,10 @@ export default {
       })
     },
 
+    setSpokenText (text) {
+      this.setSearchTerm(text)
+    },
+
     setSearchTerm (searchTerm) {
       this.searchTerm = searchTerm
       this.$nextTick(() => {
@@ -158,8 +166,22 @@ export default {
   +mobile()
     padding 20px 0
 
+  .row
+    flex-wrap nowrap
+
+  .button__text
+    +mobile()
+      display none
+
   .label
     display none
+
+  .voice-input
+    display none
+    +mobile()
+      display inline-block
+      position absolute
+      left -70%
 
 .suggestions
 

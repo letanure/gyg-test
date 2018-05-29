@@ -3,5 +3,5 @@ import SearchResults from '@/components/SearchResults'
 
 export {
   SearchForm,
-  SearchResults
+  SearchResults,
 }

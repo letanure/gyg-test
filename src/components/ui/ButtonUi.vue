@@ -1,11 +1,12 @@
 <template lang="pug">
-  button.ButtonUi.button.is-purple(
+  button.ButtonUi.button(
     :class='classes',
     :type='type',
     ref='button',
     )
       span.button__text(v-if='text').
         {{ text }}
+      slot
 </template>
 
 <script>
@@ -22,15 +23,18 @@ export default {
     },
 
     layout: {
-      default: 'primary',
+      default: 'default',
       type: String,
       required: false,
       validator (option) {
         const options = [
-          'primary',
-          'secondary',
-          'outline',
-          'text',
+          'default',
+          'green',
+          'blue',
+          'purple',
+          'red',
+          'black',
+          'orange',
         ]
         return options.includes(option)
       },
