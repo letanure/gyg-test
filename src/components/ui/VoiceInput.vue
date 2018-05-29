@@ -28,14 +28,15 @@ export default {
   computed: {
     buttonText () {
       return this.active ? 'Stop listening' : 'Search by voice'
-    }
+    },
   },
 
   mounted () {
+    // eslint-disable-next-line
     this.recognition = new webkitSpeechRecognition()
-    this.recognition.continuous = true;
-    this.recognition.lang = 'en-US';
-    this.recognition.interimResults = true;
+    this.recognition.continuous = true
+    this.recognition.lang = 'en-US'
+    this.recognition.interimResults = true
   },
 
   methods: {
@@ -55,7 +56,7 @@ export default {
     startSpeechRecognition () {
       this.recognition.start()
       this.recognition.onstart = this.onStart
-      this.recognition.onresult =this.onResult
+      this.recognition.onresult = this.onResult
       this.recognition.onerror = this.onError
       this.recognition.onend = this.onEnd
     },
@@ -66,17 +67,17 @@ export default {
     },
 
     onResult (event) {
-      if (typeof(event.results) == 'undefined') {
+      if (typeof (event.results) === 'undefined') {
         this.recognition.onend = null
         this.recognition.stop()
-        return;
+        return
       }
       for (let i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
-          this.finalTranscript += event.results[i][0].transcript;
+          this.finalTranscript += event.results[i][0].transcript
           this.$emit('speech', this.finalTranscript)
         } else {
-          this.interimTranscript += event.results[i][0].transcript;
+          this.interimTranscript += event.results[i][0].transcript
         }
       }
     },

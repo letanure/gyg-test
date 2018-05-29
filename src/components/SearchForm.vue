@@ -145,10 +145,12 @@ export default {
     },
 
     setSpokenText (text) {
+      this.$ga.event('SearchForm', 'setSpokenText', 'text', text)
       this.setSearchTerm(text)
     },
 
     setSearchTerm (searchTerm) {
+      this.$ga.event('SearchForm', 'setSearchTerm', 'text', searchTerm)
       this.searchTerm = searchTerm
       this.$nextTick(() => {
         this.$refs.buttonComponent.$refs.button.focus()

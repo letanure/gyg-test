@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import VueAnalytics from 'vue-analytics'
 import {
   BaseLayout,
   MainHeader
@@ -12,7 +13,7 @@ import {
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   linkActiveClass: 'is-active',
   linkExactActiveClass: 'is-active',
@@ -52,3 +53,10 @@ export default new Router({
     },
   ],
 })
+
+Vue.use(VueAnalytics, {
+  id: 'UA-120027011-1',
+  router,
+})
+
+export default router
