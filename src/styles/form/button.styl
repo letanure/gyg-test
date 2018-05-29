@@ -1,0 +1,123 @@
+/*
+# Form/Buttons
+*/
+
+.button
+  --border-color #CED0DA
+  --border-color--hover var(--border-color)
+  --border-color--active var(--border-color)
+  --border-color--disabled #DFE3E9
+  --background-image linear-gradient(0deg, #F2F4F7 0%, #fff 100%)
+  --background-image--hover linear-gradient(0deg, #EAEEF3 0%, #fff 100%)
+  --background-image--active linear-gradient(-1deg, #E0E4E8 0%, #F2F7FA 97%);
+  --background-image--disabled linear-gradient(0, #E9EDF1 0%, #E9EDF1 100%);
+  --border-width 1px
+  --border-radius 4px
+  --text-color #354052
+  --text-color--hover var(--text-color)
+  --text-color--active var(--text-color)
+  --text-color--disabled #354052
+  --font-size 14px
+  --line-height 19px
+  --padding 8px 21px
+  text-decoration none
+
+  &.is-rounded
+    circle(35px)
+    padding 0
+    border-radius 50%
+
+  &.is-green
+    --background-image linear-gradient(-180deg, #39B54A 0%, #34AA44 98%);
+    --border-color #249533
+    --text-color #fff
+    --background-image--hover linear-gradient(-1deg, #1E930B 3%, #1E9D09 100%)
+    --border-color #1F872D
+    --text-color--hover #fff
+    --background-image--active linear-gradient(-1deg, #1A740B 4%, #187A08 100%)
+    --border-color--active #14661F
+    --text-color--active #fff
+
+  &.is-blue
+    --background-image linear-gradient(-1deg, #1991EB 2%, #2DA1F8 98%)
+    --border-color #1585D8
+    --text-color #fff
+    --background-image--hover linear-gradient(-180deg, #1584D7 5%, #2184CF 98%)
+    --border-color--hover 1px solid #1578C2
+    --text-color--hover #fff
+    --background-image--active linear-gradient(-180deg, #0C73C1 2%, #196BAA 98%)
+    --border-color--active 1px solid #1468A7
+    --text-color--active #fff
+
+  &.is-purple
+    --background-image linear-gradient(-1deg, #6B47DB 2%, #8261E6 98%)
+    --border-color #5F40C1
+    --text-color #fff
+    --background-image--hover linear-gradient(-1deg, #613CD0 2%, #7352D5 98%)
+    --border-color #5739B8
+    --text-color #fff
+    --background-image--active linear-gradient(-1deg, #5632C4 2%, #714EDC 98%)
+    --border-color--active 1px solid #5536B6
+    --text-color--active #fff
+
+  &.is-red
+    --background-image linear-gradient(-180deg, #F85359 3%, #DC151D 98%)
+    --border-color 1px solid #DB161E
+    --text-color #fff
+    --background-image--hover linear-gradient(-180deg, #F14D53 3%, #D0161D 98%)
+    --border-color--hover 1px solid #D0121A
+    --text-color--hover #fff
+    --background-image--active linear-gradient(-180deg, #EC4349 3%, #BD0C13 98%)
+    --border-color--active 1px solid #D01119
+    --text-color--active #fff
+
+  &.is-black
+    --background-image linear-gradient(-180deg, #516173 3%, #3B4857 98%)
+    --border-color 1px solid #3B4958
+    --text-color #fff
+    --background-image--hover linear-gradient(-180deg, #415061 3%, #303D4C 98%)
+    --border--color--hover 1px solid #334050
+    --text-color--hover #fff
+    --background-image--active linear-gradient(-180deg, #354353 3%, #242F3B 98%)
+    --border-color--active 1px solid #303C4B
+    --text-color--active #fff
+
+  &.is-orange
+    --background-image linear-gradient(-180deg, #F7981C 2%, #F76B1C 100%)
+    --border-color 1px solid #F36A19
+    --text-color #fff
+    --background-image--hover linear-gradient(-180deg, #EF9219 2%, #E86013 100%)
+    --border-color--hover 1px solid #EA6211
+    --text-color--hover #fff
+    --background-image--active linear-gradient(-180deg, #E88B12 2%, #E75908 100%)
+    --border-color--active 1px solid #E25D0E
+    --text-color--active #fff
+
+  background-image var(--background-image)
+  border var(--border-width) solid var(--border-color)
+  border-radius var(--border-radius)
+  color var(--text-color)
+  cursor pointer
+  display inline-block
+  font-family: SourceSansPro-Semibold;
+  font-size var(--font-size)
+  line-height var(--line-height)
+  padding var(--padding)
+  transition all .2s linear
+
+  &:hover, &.is-hovered
+    background-image var(--background-image--hover)
+    border-color var(--border-color--hover)
+    color var(--text-color--hover)
+
+  &:active, &.is-active, &:focus, &.is-focused
+    background-image var(--background-image--active)
+    border-color var(--border-color--active)
+    color var(--text-color--active)
+    outline 0
+
+  &:disabled, &.is-disabled
+    background-image var(--background-image--disabled)
+    border-color var(--border-color--disabled)
+    color var(--text-color--disabled)
+    opacity 0.5

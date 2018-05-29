@@ -1,7 +1,8 @@
 <template lang="pug">
-  button.ButtonUi(
+  button.ButtonUi.button.is-purple(
     :class='classes',
     :type='type',
+    ref='button',
     )
       span.button__text(v-if='text').
         {{ text }}

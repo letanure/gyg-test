@@ -1,0 +1,29 @@
+/* SG
+# Components/Top Bar
+*/
+.tour-card
+  --background-color #fff
+  --background-color var(--background-color)
+  display flex
+  flex-direction row
+  flex-wrap nowrap
+  ustify-content space-between
+  align-items stretch
+  border-bottom 1px solid #CED0DA
+  padding ($baseline * .5) 0
+
+  &.is-hilight
+    background-color lightblue
+
+  &--title
+    display block
+    fontFamily('semibold')
+    fontSize('large')
+    font-size var(--font-size)
+    textColor('normal')
+    flex-grow 1
+
+  &--price
+    display block
+  &--rating
+    display block

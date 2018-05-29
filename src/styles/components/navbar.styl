@@ -1,0 +1,47 @@
+/* SG
+# Components/Top Bar
+*/
+.navbar
+  --background-color #2EA2F8
+
+  display flex
+  background var(--background-color)
+  height 70px
+
+  &-section
+    border-right 1px solid rgba(#fff, .15)
+
+  &-logo
+    font-family SourceSansPro-Semibold;
+    font-size 16px;
+    color #FFFFFF;
+    padding-top 24px
+    padding-bottom 24px
+    padding-left 30px
+    padding-right 120px
+
+  &-nav
+    font-family SourceSansPro-Semibold;
+    font-size 16px;
+    color #FFFFFF;
+    padding-top 24px
+    padding-bottom 24px
+    padding-left 30px
+    padding-right 120px
+    ul
+      list-style none
+      display inline-block
+    li
+      display inline-block
+    a
+      color: #FFFFFF;
+      padding 0 10px
+      text-decoration none
+
+  &.is-dark
+    --background-color #273142
+  &.is-violet
+    --background-color #886CE6
+  &.is-green
+    --background-color #45B854
+

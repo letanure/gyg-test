@@ -7,7 +7,7 @@ Simple grid
 */
 :root
   --columns $columns
-  --gutter $baseline
+  --gutter ($baseline * .5)
 
 .container
   display flex
@@ -29,6 +29,10 @@ Simple grid
   flex-wrap wrap
   justify-content flex-start
   width 100%
+  margin-bottom ($baseline * 1)
+
+  &:last-child
+    margin-bottom 0
 
 .column
   display block
@@ -36,9 +40,13 @@ Simple grid
   order 0
   padding-left calc(var(--gutter))
   padding-right calc(var(--gutter))
+  position relative
 
 for $breakpoint in $breakpoints
   +from-width($breakpoints[$breakpoint])
     for $col in (1..$columns)
       &.is-{$breakpoint}-{$col}
         --column-width $col
+
+      &.has-offset-{$breakpoint}-{$col}
+        margin-left 'calc((100% / var(--columns)) * %s)' % $col

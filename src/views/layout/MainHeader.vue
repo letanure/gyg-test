@@ -1,10 +1,10 @@
 <template lang="pug">
-  nav.MainHeader(role='navigation', aria-label='main navigation', )
-    router-link(:to='{ name: "HomePage" }',)
-      | Home
-    router-link(:to='{ name: "SearchPage", query: { q: "Anything" }}', )
-      | Search
-
+  nav.MainHeader.navbar.is-dark(role='navigation', aria-label='main navigation', )
+    .navbar-section
+      router-link(:to='{ name: "HomePage" }',)
+        | Home
+      router-link(:to='{ name: "SearchPage", query: { q: "Tickets" }}', )
+        | Search Results for Tickets
 </template>
 
 <script>
@@ -20,5 +20,8 @@ export default {
 
   a
     display inline-block
+    color #fff
+    margin 0 5px
+    line-height 50px
 
 </style>

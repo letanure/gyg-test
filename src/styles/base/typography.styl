@@ -1,0 +1,221 @@
+/* SG
+# Typography/Fonts
+[Eric Meyer’s “Reset CSS” 2.0](http://meyerweb.com/eric/tools/css/reset/)
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+
+<p>Paragraph</p>
+
+*/
+
+// @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600')
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700')
+
+fontFamily($font)
+  if $font is 'regular'
+    font-family var(--font-family--regular)
+  if $font is 'semibold'
+    font-family var(--font-family--semibold)
+    font-weight 400
+
+fontSize($size)
+  if $size is 'xxx-large'
+    --font-size var(--font-size--xxx-large)
+  if $size is 'xx-large'
+    --font-size var(--font-size--xx-large)
+  if $size is 'x-large'
+    --font-size var(--font-size--x-large)
+  if $size is 'large'
+    --font-size var(--font-size--large)
+  if $size is 'medium'
+    --font-size var(--font-size--medium)
+  if $size is 'small'
+    --font-size var(--font-size--small)
+  if $size is 'x-small'
+    --font-size var(--font-size--x-small)
+  if $size is 'xx-small'
+    --font-size var(--font-size--xx-small)
+
+    // font-size var(--font-size--xx-small)
+    // line-height calc(var(--font-size--xx-small) * var(--line-height-ratio))
+
+textColor($color)
+  if $size is 'normal'
+    color var(--color-text-normal)
+
+:root
+  // --font-family--regular 'Source Sans Pro', sans-serif
+  // --font-family--semibold 'Source Sans Pro', sans-serif
+  --font-family--regular 'Noto Sans', sans-serif
+  --font-family--semibold 'Noto Sans', sans-serif
+
+  --font-size--xxx-large 48px
+  --font-size--xx-large 32px
+  --font-size--x-large 24px
+  --font-size--large 18px
+  --font-size--medium 16px
+  --font-size--small 13px
+  --font-size--x-small 10px
+  --font-size--xx-small 9px
+  --font-size var(--font-size--medium)
+
+  --line-height-ratio 1.618
+  --color-text-normal #354052
+
+body
+  fontFamily('semibold')
+  fontSize('medium')
+  font-size var(--font-size)
+  textColor('normal')
+
+/* SG
+# Typography/Headings
+[Eric Meyer’s “Reset CSS” 2.0](http://meyerweb.com/eric/tools/css/reset/)
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+
+<p>Paragraph</p>
+
+*/
+[class*="is-text-h"]
+  font-size var(--font-size)
+
+.is-title
+  padding ($baseline * 3) 0 ($baseline * 2) 0
+
+.is-text-h1
+  fontFamily('regular')
+  fontSize('xxx-large')
+  textColor('normal')
+
+.is-text-h2
+  fontFamily('regular')
+  fontSize('xx-large')
+  textColor('normal')
+
+.is-text-h3
+  fontFamily('regular')
+  fontSize('large')
+  textColor('normal')
+
+.is-text-h4
+  fontFamily('regular')
+  fontSize('medium')
+  textColor('normal')
+
+/* SG
+# Typography/Copy
+[Eric Meyer’s “Reset CSS” 2.0](http://meyerweb.com/eric/tools/css/reset/)
+
+<p>Paragraph</p>
+
+*/
+
+.is-text-p
+  fontFamily('regular')
+  // fontSize('medium')
+  textColor('normal')
+  font-size var(--font-size)
+  line-height calc(var(--font-size) * var(--line-height-ratio))
+
+.is-size--xx-small
+  fontSize(xx-small)
+  font-size var(--font-size)
+
+.is-size--x-small
+  fontSize(x-small)
+  font-size var(--font-size)
+
+.is-size--small
+  fontSize(small)
+  font-size var(--font-size)
+
+.is-size--medium
+  fontSize(medium)
+  font-size var(--font-size)
+
+.is-size--large
+  fontSize(large)
+  font-size var(--font-size)
+
+.is-size--x-large
+  fontSize(x-large)
+  font-size var(--font-size)
+
+.is-size--xx-large
+  fontSize(xx-large)
+  font-size var(--font-size)
+
+/* SG
+# Typography/Lists
+
+## Unordered lists
+<ul>
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3
+    <ul>
+      <li>List item 3-1</li>
+      <li>List item 3.2</li>
+    </ul>
+  </li>
+  <li>List item 4</li>
+  <li>List item 5</li>
+</ul>
+
+## Ordered lists
+<ol>
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3
+    <ol>
+      <li>List item 3-1</li>
+      <li>List item 3.2</li>
+    </ol>
+  </li>
+  <li>List item 4</li>
+  <li>List item 5</li>
+</ol>
+
+*/
+// Lists
+
+.is-ul, .is-ol
+  margin-left 26px
+  font-size 14px
+  line-height 30px
+  font-family SourceSansPro-Semibold
+  color #354052
+
+.is-ul
+  list-style none
+
+  li:before
+    background-color rgba(53,64,82,0.50)
+    content ''
+    circle(6px)
+    margin-right 14px
+
+.is-ol
+  counter-reset section
+  list-style-type none
+
+  li:before
+    color #7F8FA4
+    content counters(section, '-') '.'
+    counter-increment section
+    font-family SourceSansPro-Regular
+    margin-right 14px
+
+// li
+//   color #354052
+
+.is-fake-bold
+  text-shadow .5px 0 0 currentColor, -.5px 0 0 currentColor
+
+.is-bold
+  font-weight 600
