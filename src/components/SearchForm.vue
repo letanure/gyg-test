@@ -3,7 +3,7 @@
   form(role="search", @submit.prevent="handleSubmit")
 
     .row
-      .column.is-mobile-9
+      .column.is-mobile-7.is-tablet-9
         label
           span.label.
             {{ labelText }}
@@ -22,12 +22,12 @@
             v-on:select='setSearchTerm',
             )
 
-      .column.is-mobile-2
+      .column.is-mobile-5.is-tablet-3
         ButtonUi(type='submit', :text='buttonText', ref='buttonComponent' )
 
     template(v-if='hasSuggestions')
       .row
-        .column.is-mobile-9
+        .column.is-mobile-12.is-tablet-9
           .suggestions-area
             h6.suggestions-title.is-size--small.
               {{ suggestionsTitle }}
@@ -54,7 +54,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { slugify } from '@/helpers/'
 import { ButtonUi, InputAutocompleteUI } from '@/components/ui'
 
 export default {
@@ -156,6 +155,8 @@ export default {
 .SearchForm
   border 1px solid gray
   padding 20px
+  +mobile()
+    padding 20px 0
 
   .label
     display none
@@ -163,9 +164,12 @@ export default {
 .suggestions
 
   &-area
-    text-align left
+    text-align center
+    +above('tablet')
+      text-align left
 
   &-title
+    display block
     margin-bottom 8px
 
   &-list
@@ -175,4 +179,7 @@ export default {
     display inline-block
     margin-right 4px
     cursor pointer
+    margin-bottom 4px
+
+    // +above('mobile')
 </style>

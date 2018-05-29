@@ -2,11 +2,11 @@
 .SearchPage
 
   .row
-    .column.is-mobile-12.is-desktop_s-6.has-offset-desktop_s-3
+    .column.is-mobile-12.is-tablet-10.has-offset-tablet-1.is-desktop_s-8.has-offset-desktop_s-2.is-desktop_m-6.has-offset-desktop_m-3
       h1.is-title.is-text-h2 Search results page
 
   .row
-    .column.is-mobile-12.is-desktop_s-6.has-offset-desktop_s-3
+    .column.is-mobile-12.is-tablet-10.has-offset-tablet-1.is-desktop_s-8.has-offset-desktop_s-2.is-desktop_m-6.has-offset-desktop_m-3
       SearchForm(
         :buttonText='texts.search.buttonText',
         :hasSuggestions='true',
@@ -17,7 +17,7 @@
         )
 
   .row
-    .column.is-mobile-12.is-desktop_s-6.has-offset-desktop_s-3
+    .column.is-mobile-12.is-tablet-10.has-offset-tablet-1.is-desktop_s-8.has-offset-desktop_s-2.is-desktop_m-6.has-offset-desktop_m-3
       SearchResults(
         :queryTerm='searchTerm',
       )

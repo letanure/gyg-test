@@ -36,32 +36,32 @@ export default {
       return toursWordsCountArrSorted
     },
 
-    search(state) {
+    search (state) {
       return queryTerm => state.tours.filter(tour => {
         const distance = levenshteinDistance(queryTerm, tour.title)
         const length = tour.title.length
         const similarity = 100 - (distance * 100 / length)
-        return  similarity > 10
+        return similarity > 10
       })
-      .map(tour => {
-        const tourWithHilight = tour
-        const hilighted = tour.title
-          .split(' ')
-          .map(word => {
-            let wordHilighted = word
-            const distance = levenshteinDistance(queryTerm, word)
-            if (distance <= 2) {
-              const searchRegex = new RegExp('(' + wordHilighted + ')', 'ig')
-              wordHilighted = wordHilighted.replace(searchRegex, `<b class='is-fake-bold'>$1</b>`)
-            }
-            return wordHilighted
-          })
-          .join(' ')
+        .map(tour => {
+          const tourWithHilight = tour
+          const hilighted = tour.title
+            .split(' ')
+            .map(word => {
+              let wordHilighted = word
+              const distance = levenshteinDistance(queryTerm, word)
+              if (distance <= 2) {
+                const searchRegex = new RegExp('(' + wordHilighted + ')', 'ig')
+                wordHilighted = wordHilighted.replace(searchRegex, `<b class='is-fake-bold'>$1</b>`)
+              }
+              return wordHilighted
+            })
+            .join(' ')
 
-        tourWithHilight.hilighted = hilighted
-        return tourWithHilight
-      })
-    }
+          tourWithHilight.hilighted = hilighted
+          return tourWithHilight
+        })
+    },
   },
 
   mutations: {

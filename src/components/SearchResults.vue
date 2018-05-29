@@ -13,18 +13,18 @@
       ol.list-tours
         li.list-tours--item
           .row.tour-card
-            .column.is-mobile-10.tour-card--title()
-            .column.is-mobile-1.tour-card--price.
+            .column.is-mobile-7.is-tablet-10.tour-card--title()
+            .column.is-mobile-3.is-tablet-1.tour-card--price.
               Price
-            .column.is-mobile-1.tour-card--rating.
+            .column.is-mobile-2.is-tablet-1.tour-card--rating.
               Rating
         template(v-for='tour in toursList', )
           li.list-tours--item
             .row.tour-card(:class='{"is-hilight": tour.isSpecialOffer}')
-              .column.is-mobile-10.tour-card--title(v-html='tour.hilighted').
-              .column.is-mobile-1.tour-card--price.
+              .column.is-mobile-7.is-tablet-10.tour-card--title(v-html='tour.hilighted').
+              .column.is-mobile-3.is-tablet-1.tour-card--price.
                 {{ tour.currency }} {{ tour.price }}
-              .column.is-mobile-1.tour-card--rating.
+              .column.is-mobile-2.is-tablet-1.tour-card--rating.
                 {{ tour.rating }}
 </template>
 
